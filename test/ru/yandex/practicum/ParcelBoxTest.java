@@ -5,7 +5,6 @@ import ru.yandex.practicum.delivery.ParcelBox;
 import ru.yandex.practicum.delivery.StandardParcel;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
 
 public class ParcelBoxTest {
     @Test

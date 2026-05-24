@@ -135,19 +135,22 @@ public class DeliveryApp {
         System.out.println("3 - Скоропортящиеся посылки");
 
         int boxType = readInt();
+        List<? extends Parcel> parcels;
         switch (boxType) {
             case 1:
-                printBoxContents(standardParcelBox.getAllParcels());
+                parcels = standardParcelBox.getAllParcels();
                 break;
             case 2:
-                printBoxContents(fragileParcelBox.getAllParcels());
+                parcels = fragileParcelBox.getAllParcels();
                 break;
             case 3:
-                printBoxContents(perishableParcelBox.getAllParcels());
+                parcels = perishableParcelBox.getAllParcels();
                 break;
             default:
                 System.out.println("Неверный тип коробки.");
+                return;
         }
+        printBoxContents(parcels);
     }
 
     private static void printBoxContents(List<? extends Parcel> parcels) {
@@ -157,7 +160,7 @@ public class DeliveryApp {
         }
 
         for (Parcel parcel : parcels) {
-            System.out.println(parcel.getDescription());
+            System.out.println(parcel.description);
         }
     }
 
